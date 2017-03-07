@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">TabProject</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string-array name="title">
+        <item>whatsapp</item>
+        <item>facebook</item>
+        <item>twitter</item>
+        <item>youtube</item>
+        <item>udemy</item>
+        <item>google chrome</item>
+        <item>mozilla firefox</item>
+        <item>8 pool</item>
+        <item>gmail</item>
+        <item>internet explorer</item>
+
+    </string-array>
+
+    <string-array name="desc">
+        <item>whatsapp</item>
+        <item>facebook</item>
+        <item>twitter</item>
+        <item>youtube</item>
+        <item>udemy</item>
+        <item>google chrome</item>
+        <item>mozilla firefox</item>
+        <item>8 pool</item>
+        <item>gmail</item>
+        <item>internet explorer</item>
+
+    </string-array>
+
+
+</resources>
