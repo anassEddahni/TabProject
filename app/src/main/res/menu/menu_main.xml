@@ -1,11 +1,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.dit.tabproject.MainActivity">
+    tools:context="com.example.dit.tabproject.MainActivity"
+    >
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/item1"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="one"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item2"
+        android:orderInCategory="100"
+        android:title="two"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/item3"
+        android:orderInCategory="100"
+        android:title="three"
         app:showAsAction="never" />
 </menu>
 

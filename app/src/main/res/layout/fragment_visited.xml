@@ -8,12 +8,13 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.dit.tabproject.MainActivity$PlaceholderFragment">
 
-    <ListView
+      <ListView
         android:id="@+id/list_visited"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+          android:paddingBottom="35dp"
         />
 
 </RelativeLayout>

@@ -15,6 +15,7 @@ import android.widget.ListView;
 public class MostRated extends Fragment {
     String[] titles;
     String[] desc;
+    int bouton = R.drawable.overflow;
     int[] images = {R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5, R.drawable.img6, R.drawable.img7, R.drawable.img8, R.drawable.img9, R.drawable.img10};
     ListView listView;
 
@@ -27,7 +28,7 @@ public class MostRated extends Fragment {
         Resources r = getResources();
         titles = r.getStringArray(R.array.title);
         desc = r.getStringArray(R.array.desc);
-        MyAdapter myAdapter = new MyAdapter(getActivity(), titles, images, titles);
+        MyAdapter myAdapter = new MyAdapter(getActivity(), titles, images, titles,bouton);
         listView.setAdapter(myAdapter);
        /* listView = (ListView) rootView.findViewById(R.id.list_download);
         ArrayAdapter<String> arrayAdapter;

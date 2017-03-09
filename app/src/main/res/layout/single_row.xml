@@ -1,37 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dip"
+    >
 
-    <ImageView
-        android:layout_width="61dp"
-        android:layout_height="53dp"
-        app:srcCompat="@drawable/img1"
-        android:id="@+id/imageView"
-        android:layout_margin="20dp"/>
 
     <LinearLayout
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="20dp">
+        android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="20dip">
 
-
-        <TextView
-            android:id="@+id/mytitle"
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
-
-        <TextView
-            android:id="@+id/descrip"
-            android:text="TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-             />
-
+             <ImageView
+                 android:id="@+id/imageView"
+                 android:layout_width="50dip"
+                 android:layout_height="50dip"
+                 android:src="@drawable/img1"
+                 />
     </LinearLayout>
 
-</LinearLayout>
+    <TextView
+        android:layout_marginTop="2dip"
+        android:id="@+id/mytitle"
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:textColor="#040404"
+        android:typeface="sans"
+        android:textSize="15dip"
+        android:textStyle="bold"
+        />
+
+
+
+         <TextView
+             android:id="@+id/descrip"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@id/mytitle"
+             android:textColor="#343434"
+             android:textSize="10dip"
+             android:layout_marginTop="2dip"
+             android:layout_toRightOf="@+id/thumbnail"
+             android:text="TextView"
+             />
+
+    <Button
+        android:id="@+id/overflow"
+        android:layout_width="20dp"
+        android:layout_height="30dp"
+        android:background="@drawable/overflow"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        />
+
+
+</RelativeLayout>
+
+
+
+
+
