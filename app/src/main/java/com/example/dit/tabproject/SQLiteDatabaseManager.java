@@ -45,6 +45,58 @@ public class SQLiteDatabaseManager extends SQLiteOpenHelper {
     }
 
 
+    // retourner la colonne NAME_CLIENT
+    public  String[] getNames(){
+        ArrayList<String> listName = new ArrayList<String>();
+        SQLiteDatabase database = this.getReadableDatabase();
+        Cursor c = database.rawQuery("SELECT "+NAME_CLIENT+" FROM "+TABLE_NAME, null);
+        int nameColumn=c.getColumnIndex(NAME_CLIENT);
+        if (c.moveToFirst()) {
+            do {
+                String name = c.getString(nameColumn);
+                listName.add(name);
+            } while (c.moveToNext());
+        }
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
+        if (database!=null){
+            database.close();
+        }
+
+        String[] allName = new String[listName.size()];
+        allName = listName.toArray(allName);
+
+        return allName;
+    }
+
+
+
+    // retourner la colonne EMAIL_CLIENT
+    public  String[] getEmails(){
+        ArrayList<String> listEmail = new ArrayList<String>();
+        SQLiteDatabase database = this.getReadableDatabase();
+        Cursor c = database.rawQuery("SELECT "+EMAIL_CLIENT+" FROM "+TABLE_NAME, null);
+        int emailColumn=c.getColumnIndex(EMAIL_CLIENT);
+        if (c.moveToFirst()) {
+            do {
+                String email = c.getString(emailColumn);
+                listEmail.add(email);
+            } while (c.moveToNext());
+        }
+        if (c != null && !c.isClosed()) {
+            c.close();
+        }
+        if (database!=null){
+            database.close();
+        }
+
+        String[] allEmail = new String[listEmail.size()];
+        allEmail = listEmail.toArray(allEmail);
+
+        return allEmail;
+    }
+
 
 
 
@@ -99,6 +151,14 @@ public class SQLiteDatabaseManager extends SQLiteOpenHelper {
         values.put(EMAIL_CLIENT,client.getEmail());
         return database.update(TABLE_NAME,values,ID_CLIENT +" = ?",new String[]{String.valueOf(client.getId())});
     }
+
+
+    public void deleteAll(){
+        SQLiteDatabase database = this.getWritableDatabase();
+        database.execSQL("delete from "+ TABLE_NAME);
+    }
+
+
 
   /*  public String getData(){
         SQLiteDatabase database = helper.getReadableDatabase();

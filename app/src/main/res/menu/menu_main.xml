@@ -6,18 +6,9 @@
     <item
         android:id="@+id/item1"
         android:orderInCategory="100"
-        android:title="one"
+        android:title="Modifier"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/item2"
-        android:orderInCategory="100"
-        android:title="two"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/item3"
-        android:orderInCategory="100"
-        android:title="three"
-        app:showAsAction="never" />
+
 </menu>
 
 

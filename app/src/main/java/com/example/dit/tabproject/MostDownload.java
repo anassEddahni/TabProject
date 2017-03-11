@@ -5,6 +5,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
@@ -21,8 +22,9 @@ import android.widget.Toast;
  */
 
 public class MostDownload extends Fragment  {
-    String[] titles;
-    String[] desc;
+    SQLiteDatabaseManager sqLiteDatabaseManager;
+    String[] names;
+    String[] emails;
     int[] images={R.drawable.img1,R.drawable.img2,R.drawable.img3,R.drawable.img4,R.drawable.img5,R.drawable.img6,R.drawable.img7,R.drawable.img8,R.drawable.img9,R.drawable.img10};
     ListView listView ;
     int bouton = R.drawable.overflow;
@@ -59,10 +61,16 @@ public class MostDownload extends Fragment  {
             }
         });
 
+        sqLiteDatabaseManager = new SQLiteDatabaseManager(getActivity());
+        String[] nom = sqLiteDatabaseManager.getNames();
+        String[] email = sqLiteDatabaseManager.getEmails();
+
+
         Resources r = getResources();
-        titles= r.getStringArray(R.array.title);
-        desc= r.getStringArray(R.array.desc);
-        MyAdapter myAdapter = new MyAdapter(getActivity(),titles,images,titles,bouton);
+        names= nom;
+        emails= email;
+        //emails= r.getStringArray(R.array.desc);    recuperer depuis ressource
+        MyAdapter myAdapter = new MyAdapter(getActivity(),names,images,emails,bouton);
         listView.setAdapter(myAdapter);
         return rootView;
 
@@ -73,5 +81,4 @@ public class MostDownload extends Fragment  {
         listView.setAdapter(arrayAdapter);*/
 
     }
-
 }

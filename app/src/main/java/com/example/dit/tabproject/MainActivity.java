@@ -2,8 +2,6 @@ package com.example.dit.tabproject;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,7 +13,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.ImageView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,20 +26,18 @@ public class MainActivity extends AppCompatActivity {
      * may be best to switch to a
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
-    private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
+    //The {@link ViewPager} that will host the section contents.
+    private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;
-     FloatingActionButton floatingActionButton;
+     ImageView floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //onclick sur le bouton flotant ajouter
-        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
+        ImageView floatingActionButton = (ImageView) findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,18 +73,16 @@ public class MainActivity extends AppCompatActivity {
      */
     public static class PlaceholderFragment extends Fragment {
         /**
-         * The fragment argument representing the section number for this
-         * fragment.
+         * The fragment argument representing the section number for this fragment.
          */
         private static final String ARG_SECTION_NUMBER = "section_number";
 
         public PlaceholderFragment() {
         }
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
+
+         //Returns a new instance of this fragment for the given section number.
+
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
@@ -152,5 +146,6 @@ public class MainActivity extends AppCompatActivity {
             }
             return null;
         }
+
     }
 }

@@ -21,31 +21,31 @@ import android.widget.Toast;
 class MyAdapter extends ArrayAdapter<String>{
     Context context;
     int[] imgs;
-    String [] titleArray;
-    String [] descArray;
+    String [] nameArray;
+    String [] emailArray;
     int overflow;
     int count = 0;
     Button overflowButton;
 
 
-    public MyAdapter(Context c, String[] titles , int imgs[] , String[] desc,int overflow){
-        super(c,R.layout.single_row,R.id.mytitle,titles);
+    public MyAdapter(Context c, String[] names , int imgs[] , String[] emails,int overflow){
+        super(c,R.layout.single_row,R.id.mytitle,names);
         this.context=c;
         this.imgs = imgs;
-        this.titleArray = titles;
-        this.descArray = desc;
+        this.nameArray = names;
+        this.emailArray = emails;
         this.overflow = overflow;
     }
 
     class MyHolder{
         ImageView myImage ;
-        TextView myTitle ;
-        TextView myDesc ;
+        TextView myName ;
+        TextView myEmail ;
         Button myOverflow;
         MyHolder(View v){
             myImage = (ImageView) v.findViewById(R.id.imageView);
-            myTitle = (TextView) v.findViewById(R.id.mytitle);
-            myDesc = (TextView) v.findViewById(R.id.descrip);
+            myName = (TextView) v.findViewById(R.id.mytitle);
+            myEmail = (TextView) v.findViewById(R.id.descrip);
             myOverflow = (Button) v.findViewById(R.id.overflow);
         }
 
@@ -103,8 +103,8 @@ class MyAdapter extends ArrayAdapter<String>{
             TextView myDesc = (TextView) row.findViewById(R.id.descrip);
 */
         holder.myImage.setImageResource(imgs [position]);
-        holder.myTitle.setText(titleArray [position]);
-        holder.myDesc.setText(descArray [position]);
+        holder.myName.setText(nameArray [position]);
+        holder.myEmail.setText(emailArray [position]);
 
         return row;
     }
